@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.twitter.entity.Tweet;
-import pl.coderslab.twitter.repository.TweetRepository;
 import pl.coderslab.twitter.entity.User;
+import pl.coderslab.twitter.repository.TweetRepository;
 import pl.coderslab.twitter.repository.UserRepository;
 import pl.coderslab.twitter.utils.TweetByDateComparator;
 

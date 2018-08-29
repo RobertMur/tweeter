@@ -9,10 +9,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.coderslab.twitter.repository.TweetRepository;
-import pl.coderslab.twitter.repository.UserRepository;
 import pl.coderslab.twitter.entity.Tweet;
 import pl.coderslab.twitter.entity.User;
+import pl.coderslab.twitter.repository.TweetRepository;
+import pl.coderslab.twitter.repository.UserRepository;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
