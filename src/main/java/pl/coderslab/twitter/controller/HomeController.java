@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.twitter.entity.Tweet;
 import pl.coderslab.twitter.entity.User;
+import pl.coderslab.twitter.repository.CommentRepository;
 import pl.coderslab.twitter.repository.TweetRepository;
 import pl.coderslab.twitter.repository.UserRepository;
 import pl.coderslab.twitter.utils.TweetByDateComparator;
@@ -20,17 +21,29 @@ public class HomeController {
     @Autowired
     TweetRepository tweetRepository;
 
+    @Autowired
+    CommentRepository commentRepository;
+
     @RequestMapping({"/home", "/"})
     public String welcomePage(Model model) {
         List<User> users = userRepository.findAll();
         model.addAttribute("allUsers", users);
         List<Tweet> userTweets = tweetRepository.findAll();
 
+//        List<ListTweetAndComm> tweetComments = new ArrayList<ListTweetAndComm>();
+//        for (Tweet t : userTweets){
+//            ListTweetAndComm asd = new ListTweetAndComm(t);
+//            tweetComments.add(asd);
+//        }
+//        model.addAttribute("tComments", tweetComments);
+
         Collections.sort(userTweets, new TweetByDateComparator());
 
         model.addAttribute("tweets", userTweets);
         return "index";
     }
+
+
 
 
 }

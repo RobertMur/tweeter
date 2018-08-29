@@ -31,10 +31,15 @@
         <li>
             Autor: <a href="/user/${tweet.user.id}/aboutUser">${tweet.user.username}</a>Utworzono: ${tweet.created}
                 <br>
-                ${tweet.text}
+                ${tweet.text}\
                 <br>
                 <a href="/tweet/${tweet.id}/comment">comment</a>
         </li>
+        <br>
+        <c:forEach items="${tweet.comments}" var ="comment">
+            ${comment.text}
+
+        </c:forEach>
         <br>
 
     </c:forEach>

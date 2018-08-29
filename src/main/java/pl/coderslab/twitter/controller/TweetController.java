@@ -100,12 +100,13 @@ public class TweetController {
     @RequestMapping(value = "/{id}/comment", method = RequestMethod.POST)
     public String comment(@ModelAttribute Comment comment, @PathVariable Long id){
         User commentingUser = userRepository.getOne(1L); // TODO get logged in user
+        Comment com = new Comment();
+        com.setUser(commentingUser);
+        com.setTweet(tweetRepository.getOne(id));
+        com.setText(comment.getText());
+        com.setCreated(new Date());
 
-        comment.setUser(commentingUser);
-        comment.setTweet(tweetRepository.getOne(id));
-        comment.setCreated(new Date());
-
-        commentRepository.save(comment);
+        commentRepository.save(com);
 
         return "redirect:/";
 

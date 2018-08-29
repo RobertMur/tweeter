@@ -1,7 +1,5 @@
 package pl.coderslab.twitter.entity;
 
-import pl.coderslab.twitter.entity.Tweet;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

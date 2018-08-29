@@ -15,7 +15,7 @@
     }
 </style>
 
-<form:form method="post" modelAttribute="comment">
+<form:form id="comTwe" method="post" modelAttribute="comment">
     Tweet text: <form:textarea path="text" rows="3" cols="20"/><br>
     <form:errors path="text" cssClass="error" /><br><br>
     <%--User: <form:select path="user.id" items="${allUsers}" itemLabel="username" itemValue="id"></form:select><br>--%>
